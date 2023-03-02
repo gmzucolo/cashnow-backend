@@ -9,6 +9,11 @@ public class User {
     public User() {
     }
 
+    public User(String userCpf, String userName) {
+        this.userCpf = userCpf;
+        this.userName = userName;
+    }
+
     public User(String userCpf, String userName, String userPhone, String userEmail) {
         this.userCpf = userCpf;
         this.userName = userName;
