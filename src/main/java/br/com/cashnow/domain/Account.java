@@ -38,7 +38,7 @@ public class Account {
         this.accountId = accountId;
     }
 
-    public Collection<AccountIncome> getIncomesId() {
+    public Collection<AccountIncome> getIncomes() {
         return incomes;
     }
 
