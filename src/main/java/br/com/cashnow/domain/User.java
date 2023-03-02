@@ -25,9 +25,9 @@ public class User {
     @Column(name = "user_cpf")
     private String userCpf;
 
-    @JoinColumn(name = "account_id")
     @OneToOne
-    private int accountId;
+    @JoinColumn(name = "account_id")
+    private Account account;
 
     @Column(name = "user_name")
     private String userName;
@@ -68,5 +68,13 @@ public class User {
 
     public void setUserEmail(String userEmail) {
         this.userEmail = userEmail;
+    }
+
+    public Account getAccount() {
+        return account;
+    }
+
+    public void setAccount(Account account) {
+        this.account = account;
     }
 }

@@ -21,6 +21,9 @@ public class Account {
     @Column(name = "account_id")
     private int accountId;
 
+    @OneToOne(mappedBy = "userCpf")
+    private User user;
+
     @OneToMany(mappedBy = "accountId")
     private Collection<AccountIncome> incomes;
 
