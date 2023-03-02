@@ -19,6 +19,14 @@ public class Account {
     @Column(name = "account_id")
     private int accountId;
 
+    @JoinColumn(name = "acc_income_id")
+    @ManyToOne
+    private int accIncomeId;
+
+    @JoinColumn(name = "acc_expense_id")
+    @ManyToOne
+    private int accExpenseId;
+
     public int getAccountId() {
         return accountId;
     }

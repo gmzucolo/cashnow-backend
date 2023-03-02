@@ -25,6 +25,10 @@ public class User {
     @Column(name = "user_cpf")
     private String userCpf;
 
+    @JoinColumn(name = "account_id")
+    @OneToOne
+    private int accountId;
+
     @Column(name = "user_name")
     private String userName;
 
