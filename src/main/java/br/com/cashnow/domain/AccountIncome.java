@@ -25,6 +25,10 @@ public class AccountIncome {
     @Column(name = "acc_income_id")
     private int accIncomeId;
 
+    @ManyToOne
+    @JoinColumn(name = "account_id")
+    private Account accountId;
+
     @Column(name = "acc_income_vl")
     private Double accIncomeVl;
 

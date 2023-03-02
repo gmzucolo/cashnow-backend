@@ -25,6 +25,10 @@ public class AccountExpense {
     @Column(name = "acc_expense_id")
     private int accExpenseId;
 
+    @ManyToOne
+    @JoinColumn(name = "account_id")
+    private Account accountId;
+
     @Column(name = "acc_expense_vl")
     private Double accExpenseVl;
 
