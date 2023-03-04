@@ -1,8 +1,6 @@
 package br.com.cashnow.domain;
 
 import javax.persistence.*;
-import java.util.Collection;
-import java.util.List;
 
 @Entity
 @Table(name = "tb_account")
@@ -33,11 +31,6 @@ public class Account {
     public void setUser(User user) {
         this.user = user;
     }
-//    @OneToMany(mappedBy = "accountId")
-//    private Collection<AccountIncome> incomes;
-//
-//    @OneToMany(mappedBy = "accountId")
-//    private Collection<AccountExpense> expenses;
 
     public int getAccountId() {
         return accountId;
@@ -47,19 +40,4 @@ public class Account {
         this.accountId = accountId;
     }
 
-//    public Collection<AccountIncome> getIncomes() {
-//        return incomes;
-//    }
-//
-//    public void setIncomes(List<AccountIncome> incomes) {
-//        this.incomes = incomes;
-//    }
-//
-//    public Collection<AccountExpense> getExpenses() {
-//        return expenses;
-//    }
-//
-//    public void setExpenses(List<AccountExpense> expenses) {
-//        this.expenses = expenses;
-//    }
 }

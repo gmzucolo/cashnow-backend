@@ -78,7 +78,8 @@ public final class Utils {
     public void doUserDeleteTransaction(EntityManager entityManager, User user) {
         UserDAO userDAO = new UserDAO();
         try {
-            userDAO.delete(entityManager, user);
+            User userRecovery = entityManager.find(User.class, user.getUserCpf());
+            userDAO.delete(entityManager, userRecovery);
             entityManager.getTransaction().begin();
             entityManager.getTransaction().commit();
 

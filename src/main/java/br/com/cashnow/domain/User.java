@@ -1,12 +1,19 @@
 package br.com.cashnow.domain;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
 @Table(name = "tb_user")
 public class User {
 
     public User() {
+    }
+
+    public User(String userCpf) {
+        this.userCpf = userCpf;
     }
 
     public User(String userCpf, String userName, String userPhone, String userEmail) {
@@ -60,5 +67,6 @@ public class User {
     public void setUserEmail(String userEmail) {
         this.userEmail = userEmail;
     }
+
 
 }
