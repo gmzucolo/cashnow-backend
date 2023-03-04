@@ -14,8 +14,8 @@ public class DBAccountUpdateTest {
         Account account = new Account(5, new User("12345678913"));
 
         //CREATE
-//        EntityManager entityManager = utils.createPersistence();
-//        utils.doAccountUpdateTransaction(entityManager, account);
+        EntityManager entityManager = utils.createPersistence();
+        utils.doAccountUpdateTransaction(entityManager, account);
 
         //FIND
 //        EntityManager entityManager = utils.createPersistence();
