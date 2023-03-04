@@ -13,19 +13,19 @@ public class AccountDAO {
     @PersistenceContext
     private EntityManager entityManager;
 
-    public void create(Account account) {
+    public void create(EntityManager entityManager, Account account) {
         entityManager.persist(account);
     }
 
-    public Account findById(int accountId) {
+    public Account findById(EntityManager entityManager, int accountId) {
         return entityManager.find(Account.class, accountId);
     }
 
-    public void update(Account account) {
+    public void update(EntityManager entityManager, Account account) {
         entityManager.merge(account);
     }
 
-    public void delete(Account account) {
+    public void delete(EntityManager entityManager, Account account) {
         entityManager.remove(account);
     }
 

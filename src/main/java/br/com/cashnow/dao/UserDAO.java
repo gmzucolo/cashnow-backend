@@ -14,19 +14,19 @@ public class UserDAO {
     @PersistenceContext
     private EntityManager entityManager;
 
-    public void create(User user) {
+    public void create(EntityManager entityManager, User user) {
         entityManager.persist(user);
     }
 
-    public User findById(String userCpf) {
+    public User findById(EntityManager entityManager, String userCpf) {
         return entityManager.find(User.class, userCpf);
     }
 
-    public void update(User user) {
+    public void update(EntityManager entityManager, User user) {
         entityManager.merge(user);
     }
 
-    public void delete(User user) {
+    public void delete(EntityManager entityManager, User user) {
         entityManager.remove(user);
     }
 

@@ -12,63 +12,63 @@ public class AccountExpense {
     public AccountExpense() {
     }
 
-    public AccountExpense(int accExpenseId, Double accExpenseVl, String accExpenseDs, Calendar accExpenseDt) {
-        this.accExpenseId = accExpenseId;
-        this.accExpenseVl = accExpenseVl;
-        this.accExpenseDs = accExpenseDs;
-        this.accExpenseDt = accExpenseDt;
+    public AccountExpense(int expenseId, Double ExpenseVl, String expenseDs, Calendar expenseDt) {
+        this.expenseId = expenseId;
+        this.expenseVl = ExpenseVl;
+        this.expenseDs = expenseDs;
+        this.expenseDt = expenseDt;
     }
 
     @Id
     @SequenceGenerator(name = "acc_expense", sequenceName = "sq_tb_account_expense", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "acc_expense")
     @Column(name = "acc_expense_id")
-    private int accExpenseId;
+    private int expenseId;
 
     @ManyToOne
     @JoinColumn(name = "account_id")
     private Account accountId;
 
     @Column(name = "acc_expense_vl")
-    private Double accExpenseVl;
+    private Double expenseVl;
 
     @Column(name = "acc_expense_ds")
-    private String accExpenseDs;
+    private String expenseDs;
 
     @CreationTimestamp
     @Column(name = "acc_expense_dt")
     @Temporal(TemporalType.DATE)
-    private Calendar accExpenseDt;
+    private Calendar expenseDt;
 
-    public int getAccExpenseId() {
-        return accExpenseId;
+    public int getExpenseId() {
+        return expenseId;
     }
 
-    public void setAccExpenseId(int accExpenseId) {
-        this.accExpenseId = accExpenseId;
+    public void setExpenseId(int expenseId) {
+        this.expenseId = expenseId;
     }
 
-    public Double getAccExpenseVl() {
-        return accExpenseVl;
+    public Double getExpenseVl() {
+        return expenseVl;
     }
 
-    public void setAccExpenseVl(Double accExpenseVl) {
-        this.accExpenseVl = accExpenseVl;
+    public void setExpenseVl(Double expenseVl) {
+        this.expenseVl = expenseVl;
     }
 
-    public String getAccExpenseDs() {
-        return accExpenseDs;
+    public String getExpenseDs() {
+        return expenseDs;
     }
 
-    public void setAccExpenseDs(String accExpenseDs) {
-        this.accExpenseDs = accExpenseDs;
+    public void setExpenseDs(String expenseDs) {
+        this.expenseDs = expenseDs;
     }
 
-    public Calendar getAccExpenseDt() {
-        return accExpenseDt;
+    public Calendar getExpenseDt() {
+        return expenseDt;
     }
 
-    public void setAccExpenseDt(Calendar accExpenseDt) {
-        this.accExpenseDt = accExpenseDt;
+    public void setExpenseDt(Calendar expenseDt) {
+        this.expenseDt = expenseDt;
     }
 }

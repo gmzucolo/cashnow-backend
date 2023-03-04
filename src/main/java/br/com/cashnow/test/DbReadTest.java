@@ -1,5 +1,6 @@
 package br.com.cashnow.test;
 
+import br.com.cashnow.domain.Account;
 import br.com.cashnow.domain.User;
 
 import javax.persistence.EntityManager;
@@ -15,9 +16,9 @@ public class DbReadTest {
                 .createEntityManager();
 
         //lê um registro do banco
-        User user = em.find(User.class, "12345678910");
+        Account account = em.find(Account.class, 1);
 
-        System.out.println(user.getUserCpf() + " " + user.getUserName());
+        System.out.println(account);
         em.close();
     }
 }

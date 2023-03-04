@@ -11,8 +11,9 @@ public class Account {
     public Account() {
     }
 
-    public Account(int accountId) {
+    public Account(int accountId, User user) {
         this.accountId = accountId;
+        this.user = user;
     }
 
     @Id
@@ -21,14 +22,22 @@ public class Account {
     @Column(name = "account_id")
     private int accountId;
 
-    @OneToOne(mappedBy = "userCpf")
+    @OneToOne
+    @JoinColumn(name = "user_cpf")
     private User user;
 
-    @OneToMany(mappedBy = "accountId")
-    private Collection<AccountIncome> incomes;
+    public User getUser() {
+        return user;
+    }
 
-    @OneToMany(mappedBy = "accountId")
-    private Collection<AccountExpense> expenses;
+    public void setUser(User user) {
+        this.user = user;
+    }
+//    @OneToMany(mappedBy = "accountId")
+//    private Collection<AccountIncome> incomes;
+//
+//    @OneToMany(mappedBy = "accountId")
+//    private Collection<AccountExpense> expenses;
 
     public int getAccountId() {
         return accountId;
@@ -38,19 +47,19 @@ public class Account {
         this.accountId = accountId;
     }
 
-    public Collection<AccountIncome> getIncomes() {
-        return incomes;
-    }
-
-    public void setIncomes(List<AccountIncome> incomes) {
-        this.incomes = incomes;
-    }
-
-    public Collection<AccountExpense> getExpenses() {
-        return expenses;
-    }
-
-    public void setExpenses(List<AccountExpense> expenses) {
-        this.expenses = expenses;
-    }
+//    public Collection<AccountIncome> getIncomes() {
+//        return incomes;
+//    }
+//
+//    public void setIncomes(List<AccountIncome> incomes) {
+//        this.incomes = incomes;
+//    }
+//
+//    public Collection<AccountExpense> getExpenses() {
+//        return expenses;
+//    }
+//
+//    public void setExpenses(List<AccountExpense> expenses) {
+//        this.expenses = expenses;
+//    }
 }
